@@ -28,9 +28,9 @@ services:
       - "3306:3306"
     environment:
       MYSQL_USER: root
-      MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_PASSWORD: rootpass
-      MYSQL_DATABASE: wordpress
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
     volumes:
       - './docker/volume/mysql:/var/lib/mysql'
 
@@ -56,7 +56,7 @@ services:
     volumes:
       - ./app:/var/www/html
     environment:
-      WORDPRESS_DB_HOST: mariadb
-      WORDPRESS_DB_USER: root
-      WORDPRESS_DB_PASSWORD: rootpass
-      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_HOST: ${MYSQL_HOST}
+      WORDPRESS_DB_USER: ${MYSQL_USER}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE}
