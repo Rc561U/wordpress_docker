@@ -6,10 +6,7 @@
 docker-compose up
 ```
 ```shell
-docker-compose exec wpcli wp config create --dbname=wordpress --dbuser=root --dbpass=rootpass --locale=en_US --dbhost=mariadb
-```
-```shell
-docker-compose exec wpcli wp core download
+bash install.sh
 ```
 
 
