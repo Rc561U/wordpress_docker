@@ -6,6 +6,10 @@
 docker-compose up
 ```
 ```shell
+sudo chmod 777 app/
+```
+
+```shell
 bash install.sh
 ```
 
